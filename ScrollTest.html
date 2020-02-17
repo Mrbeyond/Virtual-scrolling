@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<center>
+		<h1>Get Time</h1>
+		<br><br><br><br><br><br><br>1<br><br><br>
+		<br><br><br>2<br><br><br><br><br>3<br><br>
+		<br><br><br><br><br>4<br><br><br><br>5<br>
+		<br><br><br><br>6<br><br><br><br><br>7<br>
+		<br><br><br><br>8<br>
+		<p id="pp"></p>
+		<button style="width:80px;" onclick='alert(document.body.offsetHeight+ " "+window.innerHeight+ "  "+window. pageYOffset)'>test</button>
+	</center>
+</body>
+<script>
+	var more = "<p> more and more</p>";
+	var timer = new Date();
+	var count=1;
+	var go = true;
+	// pro=()=>{ go = true; count =0, timer= new Date()}
+				
+	window. onscroll =()=>{
+		if(go){
+		    if((window. innerHeight+window. pageYOffset) >= document.body.offsetHeight){
+				count++;
+			    pp.innerHTML += more;
+            }
+		}
+		let sec = (new Date()) - timer;
+		if(sec > 10000 && count >=3){
+			go = true;
+			count = 1;
+			timer = new Date();
+			// alert(sec);
+			}
+		if( sec < 10000 && count >3){
+			go = false
+		}	
+	}
+</script>
+</html>
+
